@@ -1,0 +1,17 @@
+CREATE DATABASE knihovna DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_czech_ci;
+
+USE knihovna;
+
+CREATE TABLE knihy
+    -> (
+    -> isbn VARCHAR(25) NOT NULL,
+    -> jmeno_autor VARCHAR(50) NOT NULL,
+    -> prijmeni_autor VARCHAR(100) NOT NULL,
+    -> nazev_knihy VARCHAR(150) NOT NULL,
+    -> popis VARCHAR(500) NOT NULL,
+    -> PRIMARY KEY (ISBN)
+    -> );
+
+CREATE USER knihovnik@localhost IDENTIFIED BY '123';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON knihovna.* TO knihovnik@localhost;
